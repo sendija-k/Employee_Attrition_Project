@@ -21,11 +21,11 @@ Before building the model, exploratory data analysis (EDA) was performed, which 
 To predict employee attrition, a binary classification problem, two ensemble learning models were developed. The dataset was split 80–20 into training and testing sets.  
 First, a random forest model with 500 decision trees was trained. The table and confusion matrix below show its performance on the test data, along with the most important features contributing to employee attrition.
 
-![Chart](name here) ![CM](name here) ![feature importance](name here)
+<img src="random_forest_chart.png" alt="Random forest chart" width="500" height="400"> <img src="random_forest_cm.png" alt="Random forest CM" width="400" height="300"> <img src="random_forest_features.png" alt="Random forest features" width="500" height="400">
 
 Next, an XGBoost model with 15 decision trees was created. Its results and feature importances are shown in below.
 
-![Chart](name here) ![CM](name here) ![feature importance](name here)
+<img src="xgboost_chart.png" alt="XGBoost chart" width="500" height="400"> <img src="xgboost_cm.png" alt="XGBoost CM" width="400" height="300"> <img src="xgboost_features.png" alt="XGBoost features" width="500" height="400">
 
 Both models achieved an AUC score of 95.0%. XGBoost demonstrated higher precision (97.0%), accuracy (97.9%), and F1-score (93.7%), while the Random Forest model achieved slightly higher recall (90.9%).
 
