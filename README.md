@@ -1,19 +1,40 @@
 # Predicting Employee Attrition (Google Advanced Analytics Certificate Capstone Project)
+
 ## Project Overview
-The goal of this project was to develop a machine learning model to predict whether an employee is likely to leave the company. The dataset, based on the fictional company Salifort Motors, includes features such as employee satisfaction level, average monthly hours, number of projects, tenure, and an indicator of whether the employee has left. Two models were built - Random Forest and XGBoost - both achieving an AUC of 95.5%, with precision scores of 96.0% and 98.0%, and recall scores of 91.7% and 91.3%, respectively. Model results showed that satisfaction level was the strongest predictor of turnover, followed by tenure, number of projects, and last evaluation score.  
+
+The goal of this project was to develop a machine learning model to predict whether an employee is likely to leave the company. The dataset, based on the fictional company Salifort Motors, includes features such as employee satisfaction level, average monthly hours, number of projects, tenure, and an indicator of whether the employee has left. Two models were built - Random Forest and XGBoost - both achieving an AUC of 95.5%, with precision scores of 96.0% and 98.0%, and recall scores of 91.7% and 91.3%, respectively. Model results showed that satisfaction level was the strongest predictor of turnover, followed by tenure, number of projects, and last evaluation score.
+
 All the code used for data cleaning, exploratory analysis, model training, and evaluation is included in the accompanying Jupyter Notebook file project_notebook.ipynb. This notebook contains all steps of the project, from loading and preprocessing the dataset to building the Random Forest and XGBoost models, generating performance metrics, and visualizing feature importances. It can be run end-to-end to reproduce the results presented in this report.
+
 ## Business Understanding 
+
 The HR department at Salifort Motors wants to understand why some employees leave the company and how to improve retention. High turnover increases recruitment and training costs while lowering productivity. The main stakeholders are the HR team and company leadership, who aim to use data-driven insights to design better retention strategies. This project analyzes HR data to identify key factors influencing turnover and builds a predictive model to flag employees most at risk of leaving.
+
 ## Data Understanding
-The dataset, originally from Kaggle and provided through Coursera as part of the Google Advanced Data Analytics Certificate, contains 15,000 rows and 10 columns. It includes features such as employee satisfaction level, last performance evaluation score, number of projects, tenure, salary, and more. The data is slightly imbalanced, with 83.3% of employees retained and 16.7% who left the company.  
+
+The dataset, originally from Kaggle and provided through Coursera as part of the Google Advanced Data Analytics Certificate, contains 15,000 rows and 10 columns. It includes features such as employee satisfaction level, last performance evaluation score, number of projects, tenure, salary, and more. The data is slightly imbalanced, with 83.3% of employees retained and 16.7% who left the company.
+
 Before building the model, exploratory data analysis (EDA) was performed, which included renaming columns, removing duplicates, checking for missing values and outliers, and creating visualizations to explore relationships between variables.
+
 ## Modeling and Evaluation
+
 To predict employee attrition, a binary classification problem, two ensemble learning models were developed. The dataset was split 75–25 into training and testing sets.  
-First, a random forest model with 500 decision trees was trained. The table and confusion matrix below show its performance on the test data, along with the most important features contributing to employee attrition.  
-Next, an XGBoost model with 15 decision trees was created. Its results and feature importances are shown in below.  
-Both models achieved an AUC score of 95.5%. XGBoost demonstrated higher precision (98.0%), accuracy (98.2%), and F1-score (94.5%), while the Random Forest model achieved slightly higher recall (91.7%).  
-Both models identified satisfaction level as the most important factor influencing employee turnover. Additional key features included tenure, number of projects, and last evaluation score. In future iterations, feature engineering could enhance model performance, for example, by combining variables such as average monthly hours and number of projects to represent burnout level.  
+First, a random forest model with 500 decision trees was trained. The table and confusion matrix below show its performance on the test data, along with the most important features contributing to employee attrition.
+
+![Chart](name here) ![CM](name here) ![feature importance](name here)
+
+Next, an XGBoost model with 15 decision trees was created. Its results and feature importances are shown in below.
+
+![Chart](name here) ![CM](name here) ![feature importance](name here)
+
+Both models achieved an AUC score of 95.5%. XGBoost demonstrated higher precision (98.0%), accuracy (98.2%), and F1-score (94.5%), while the Random Forest model achieved slightly higher recall (91.7%).
+
+Both models identified satisfaction level as the most important factor influencing employee turnover. Additional key features included tenure, number of projects, and last evaluation score. In future iterations, feature engineering could enhance model performance, for example, by combining variables such as average monthly hours and number of projects to represent burnout level.
+
 While both models are suitable for further analysis, the choice depends on stakeholder priorities. XGBoost offers a better overall performance balance, but random forest may be preferable if the primary goal is to maximize recall and identify as many potential leavers as possible, even at the cost of some false positives.
+
 ## Conclusion
-This project identified the main factors influencing employee turnover at Salifort Motors and built predictive models to help the HR team take proactive action. Both random forest and XGBoost performed well, highlighting satisfaction level, tenure, number of projects, and last evaluation score as the strongest predictors of attrition.  
+
+This project identified the main factors influencing employee turnover at Salifort Motors and built predictive models to help the HR team take proactive action. Both random forest and XGBoost performed well, highlighting satisfaction level, tenure, number of projects, and last evaluation score as the strongest predictors of attrition.
+
 It is recommended that the company focus on improving employee satisfaction and monitoring staff with low satisfaction or heavy workloads. Future steps include feature engineering to better capture burnout and adding more employee engagement data (such as gathering survey data about workplace culture, career growth and management).
