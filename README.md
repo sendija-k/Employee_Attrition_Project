@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-The goal of this project was to develop a machine learning model to predict whether an employee is likely to leave the company. The dataset, based on the fictional company Salifort Motors, includes features such as employee satisfaction level, average monthly hours, number of projects, tenure, and an indicator of whether the employee has left. Two models were built - Random Forest and XGBoost - both achieving an AUC of 95.5%, with precision scores of 96.0% and 98.0%, and recall scores of 91.7% and 91.3%, respectively. Model results showed that satisfaction level was the strongest predictor of turnover, followed by tenure, number of projects, and last evaluation score.
+The goal of this project was to develop a machine learning model to predict whether an employee is likely to leave the company. The dataset, based on the fictional company Salifort Motors, includes features such as employee satisfaction level, average monthly hours, number of projects, tenure, and an indicator of whether the employee has left. Two models were built - Random Forest and XGBoost - both achieving an AUC of 95.0%, with precision scores of 95.7% and 97.0%, and recall scores of 90.9% and 90.7%, respectively. Model results showed that satisfaction level was the strongest predictor of turnover, followed by tenure, number of projects, and last evaluation score.
 
 All the code used for data cleaning, exploratory analysis, model training, and evaluation is included in the accompanying Jupyter Notebook file project_notebook.ipynb. This notebook contains all steps of the project, from loading and preprocessing the dataset to building the Random Forest and XGBoost models, generating performance metrics, and visualizing feature importances. It can be run end-to-end to reproduce the results presented in this report.
 
@@ -18,7 +18,7 @@ Before building the model, exploratory data analysis (EDA) was performed, which 
 
 ## Modeling and Evaluation
 
-To predict employee attrition, a binary classification problem, two ensemble learning models were developed. The dataset was split 75–25 into training and testing sets.  
+To predict employee attrition, a binary classification problem, two ensemble learning models were developed. The dataset was split 80–20 into training and testing sets.  
 First, a random forest model with 500 decision trees was trained. The table and confusion matrix below show its performance on the test data, along with the most important features contributing to employee attrition.
 
 ![Chart](name here) ![CM](name here) ![feature importance](name here)
@@ -27,7 +27,7 @@ Next, an XGBoost model with 15 decision trees was created. Its results and featu
 
 ![Chart](name here) ![CM](name here) ![feature importance](name here)
 
-Both models achieved an AUC score of 95.5%. XGBoost demonstrated higher precision (98.0%), accuracy (98.2%), and F1-score (94.5%), while the Random Forest model achieved slightly higher recall (91.7%).
+Both models achieved an AUC score of 95.0%. XGBoost demonstrated higher precision (97.0%), accuracy (97.9%), and F1-score (93.7%), while the Random Forest model achieved slightly higher recall (90.9%).
 
 Both models identified satisfaction level as the most important factor influencing employee turnover. Additional key features included tenure, number of projects, and last evaluation score. In future iterations, feature engineering could enhance model performance, for example, by combining variables such as average monthly hours and number of projects to represent burnout level.
 
