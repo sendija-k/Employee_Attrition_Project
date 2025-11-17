@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-The goal of this project was to develop a machine learning model to predict whether an employee is likely to leave the company. The dataset, based on the fictional company Salifort Motors, includes features such as employee satisfaction level, average monthly hours, number of projects, tenure, and an indicator of whether the employee has left. Two models were built - Random Forest and XGBoost - both achieving an AUC of 95.0%, with precision scores of 95.7% and 97.0%, and recall scores of 90.9% and 90.7%, respectively. Model results showed that satisfaction level was the strongest predictor of turnover, followed by tenure, number of projects, and last evaluation score.
+The goal of this project was to develop a machine learning model to predict whether an employee is likely to leave the company. The dataset, based on the fictional company Salifort Motors, includes features such as employee satisfaction level, average monthly hours, number of projects, tenure, and an indicator of whether the employee has left. Two models were built - Random Forest and XGBoost - achieving an AUC scores of 95.0% and 95.1%, precision scores of 95.7% and 96.5%, and recall scores of 90.9% and 90.9%, respectively. Model results showed that satisfaction level, tenure, number of projects and last evaluation score were the strongest predictors of turnover. Although both models performed well, XGBoost provided slightly stronger overall predictive performance.
 
 All the code used for data cleaning, exploratory analysis, model training, and evaluation is included in the accompanying Jupyter Notebook file project_notebook.ipynb. This notebook contains all steps of the project, from loading and preprocessing the dataset to building the Random Forest and XGBoost models, generating performance metrics, and visualizing feature importances. It can be run end-to-end to reproduce the results presented in this report.
 
@@ -23,15 +23,15 @@ First, a random forest model with 500 decision trees was trained. The table and 
 
 <img src="random_forest_chart.png" alt="Random forest chart" width="500" height="400"> <img src="random_forest_cm.png" alt="Random forest CM" width="400" height="300"> <img src="random_forest_features.png" alt="Random forest features" width="500" height="400">
 
-Next, an XGBoost model with 15 decision trees was created. Its results and feature importances are shown in below.
+Next, an XGBoost model with 100 decision trees was created. Its results and feature importances are shown in below.
 
 <img src="xgboost_chart.png" alt="XGBoost chart" width="500" height="400"> <img src="xgboost_cm.png" alt="XGBoost CM" width="400" height="300"> <img src="xgboost_features.png" alt="XGBoost features" width="500" height="400">
 
-Both models achieved an AUC score of 95.0%. XGBoost demonstrated higher precision (97.0%), accuracy (97.9%), and F1-score (93.7%), while the Random Forest model achieved slightly higher recall (90.9%).
+Both models achieved an recall score of 90.9%. XGBoost demonstrated slightly higher precision (96.5%), accuracy (97.9%), F1 (93.6%), and AUC scores (95.1%).
 
-Both models identified satisfaction level as the most important factor influencing employee turnover. Additional key features included tenure, number of projects, and last evaluation score. In future iterations, feature engineering could enhance model performance, for example, by combining variables such as average monthly hours and number of projects to represent burnout level.
+As for the most important factor influencing employee turnover, the random forest model identified satisfaction score, while for the XGBoost model it was tenure. Additional key features included number of projects and last evaluation score. In future iterations, feature engineering could enhance model performance, for example, by combining variables such as average monthly hours and number of projects to represent burnout level.
 
-While both models are suitable for further analysis, the choice depends on stakeholder priorities. XGBoost offers a better overall performance balance, but random forest may be preferable if the primary goal is to maximize recall and identify as many potential leavers as possible, even at the cost of some false positives.
+Overall, XGBoost is the stronger choice for this project, as it provides higher precision, accuracy, F1-score, and AUC while maintaining the same recall as the random forest model.
 
 ## Conclusion
 
